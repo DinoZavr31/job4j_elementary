@@ -4,16 +4,11 @@ public class EndsWith {
     public static boolean endsWith(char[] word, char[] post) {
         boolean result = true;
         for (int a = 0; a < post.length; a++) {
-            for (int b = 0; b < word.length; b++) {
-                if (post[post.length - 1] == word[word.length - 1 - b]) {
-                    result = true;
+            if (post[post.length - a - 1] != word[word.length - 1 - a]) {
+                result = false;
                     break;
-                } else {
-                    result = false;
-                }
             }
         }
-        /* проверить. что массив word имеет последние элементы одинаковые с post */
         return result;
     }
 }
